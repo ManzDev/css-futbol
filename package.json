@@ -8,7 +8,13 @@
     "build": "parcel build src/index.html -d build --public-url /css-futbol/",
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
-  "keywords": ["html", "css", "javascript", "webcomponents", "postcss"],
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "webcomponents",
+    "postcss"
+  ],
   "author": "Manz",
   "license": "ISC",
   "devDependencies": {
