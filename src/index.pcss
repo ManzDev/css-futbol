@@ -490,3 +490,41 @@ body {
   transition: transform 0.25s linear;
   will-change: transform;
 }
+
+/* Responsive */
+
+@media screen and (700px <= width <= 1100px) {
+  #app {
+    & .field {
+      --field-width: 700px;
+      --field-rotate-z: -90deg;
+    }
+
+    & .player {
+      transform:
+        rotateZ(90deg)
+        translateZ(var(--player-translate-z))
+        rotateX(calc(var(--field-rotate-x) * -1));
+    }
+  }
+}
+
+.player { transition: transform 0.75s; }
+.field { transition: transform 0.25s; }
+
+@media screen and (width <= 700px) {
+  .playable {
+    flex-wrap: wrap;
+  }
+
+  .field {
+    --field-width: 400px;
+    --field-height: 250px;
+  }
+}
+
+/*
+.field {
+  --field-width: 70vw;
+}
+*/
