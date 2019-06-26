@@ -123,3 +123,42 @@
     }
   }
 }
+
+/* Mirror enemy area */
+
+.zone {
+  &.right {
+    transform: scaleX(-1);
+  }
+}
+
+/* Middle zone */
+
+.middle {
+  border-left: 4px solid white;
+  width: 0;
+}
+
+.middle {
+  &::before {
+    content: "";
+    border: 4px solid white;
+    border-radius: 50%;
+    width: calc(var(--field-width) * 0.15);
+    height: calc(var(--field-width) * 0.15);
+
+    position: absolute;
+    transform: translateX(-51%);
+  }
+
+  &::after {
+    content: "";
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+
+    position: absolute;
+    transform: translateX(-65%);
+  }
+}
