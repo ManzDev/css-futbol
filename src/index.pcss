@@ -451,3 +451,42 @@
     ". f . k";
   grid-template-columns: repeat(7, 1fr);
 }
+
+/* 3D System */
+
+body {
+  overflow: hidden;
+}
+
+#app {
+  perspective: 150px;
+  perspective-origin: bottom;
+}
+
+.field {
+  --field-rotate-x: 0deg;
+  --field-rotate-z: 0deg;
+  --field-scale: 1;
+  --player-translate-z: 2px;
+
+  transform:
+    rotateX(var(--field-rotate-x))
+    rotateZ(var(--field-rotate-z))
+    scale(var(--field-scale));
+
+  transition: transform 0.2s linear;
+  will-change: transform;
+}
+
+.field,
+.playable {
+  transform-style: preserve-3d;
+}
+
+.player {
+  transform:
+    translateZ(var(--player-translate-z))
+    rotateX(calc(var(--field-rotate-x) * -1));
+  transition: transform 0.25s linear;
+  will-change: transform;
+}
