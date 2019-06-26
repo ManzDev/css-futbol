@@ -254,3 +254,111 @@
     }
   }
 }
+
+/* Playable zone */
+
+.field {
+  position: relative;
+
+  & .playable {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.player {
+  --player-width: calc(var(--field-width) / 15);
+
+  width: var(--player-width);
+  height: var(--player-width);
+  background: grey;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow:
+    4px 4px 14px rgba(0, 0, 0, 0.5) inset,
+    4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.numbers .player::before {
+  content: attr(data-number);
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--player-width) / 2);
+
+  display: flex;
+  justify-content: center;
+}
+
+.tenerife .player {
+  background: #000 linear-gradient(#fff 60%, #00f 60%, #00f5 90%);
+}
+
+.barça .player {
+  background:
+    linear-gradient(to bottom, transparent 0% 60%, #0a2455 60%),
+    repeating-linear-gradient(to right, #1d3b71 0% 20%, #8f1d2a 20% 40%);
+
+  &::before {
+    color: yellow;
+  }
+}
+
+.realmadrid .player {
+  background: #fff linear-gradient(to bottom, #fff 60%, #000 60% 61%, #fff 64%);
+}
+
+.spain .player {
+  background:
+    linear-gradient(to bottom, transparent 0% 60%, #035781 60%),
+    linear-gradient(
+      to right,
+      #f31f2d 5% 10%,
+      #eebe4f 10% 16%,
+      #84485f 16% 22%,
+      #f31f2d 22% 40%
+    );
+}
+
+.atleti .player {
+  background:
+    linear-gradient(to bottom, transparent 0% 60%, #202669 60%),
+    repeating-linear-gradient(to right, #a40f23 0% 20%, #fff 20% 40%);
+
+  &::before {
+    text-shadow: 0 0 4px #fff;
+  }
+}
+
+.player.goalkeeper {
+  background-image: linear-gradient(#111 60%, #888 60%);
+  &::before { color: #eee; }
+}
+
+.pacman .player {
+  border: 0 solid #000;
+
+  &::before {
+    content: "*";
+  }
+
+  &:not(.goalkeeper) {
+    background: transparent;
+    animation: wakawaka 0.4s linear infinite;
+  }
+}
+
+@keyframes wakawaka {
+  0% {
+    background-image:
+      conic-gradient(
+        from 60deg,
+        transparent 0% 18%,
+        yellow 18%
+      );
+  }
+
+  100% {
+    background-image: conic-gradient(from 60deg, yellow 0% 360%);
+  }
+}
