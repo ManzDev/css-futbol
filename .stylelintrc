@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-nested-pattern": "^&",
+    "indentation": 2,
+    "no-descending-specificity": null,
+    "no-eol-whitespace": null,
+    "declaration-empty-line-before": null,
+    "no-duplicate-selectors": null,
+    "selector-type-no-unknown": null
+  }
+}
