@@ -1,0 +1,45 @@
+:root {
+  background: #141414;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  --field-width: 850px;
+  --field-height: calc(var(--field-width) / 2);
+
+  background-color: green;
+  border: 4px solid white;
+  width: var(--field-width);
+  height: var(--field-height);
+  margin: auto;
+}
+
+/* Separation */
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Slide area */
+
+.zone {
+  display: flex;
+  height: 100%;
+  align-items: center;
+
+  & .area {
+    --area-width: calc(var(--field-width) / 6);
+    --area-height: calc(var(--field-height) / 2);
+
+    width: var(--area-width);
+    height: var(--area-height);
+    border: 4px solid white;
+    border-left: 0;
+  }
+}
