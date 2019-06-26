@@ -362,3 +362,92 @@
     background-image: conic-gradient(from 60deg, yellow 0% 360%);
   }
 }
+
+/* Formation */
+
+.playable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .player {
+    margin: 5px;
+  }
+}
+
+[data-formation] {
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+}
+
+[data-formation="initial"] {
+  display: flex;
+}
+
+.p1 { grid-area: a; }
+.p2 { grid-area: b; }
+.p3 { grid-area: c; }
+.p4 { grid-area: d; }
+.p5 { grid-area: e; }
+.p6 { grid-area: f; }
+.p7 { grid-area: g; }
+.p8 { grid-area: h; }
+.p9 { grid-area: i; }
+.p10 { grid-area: j; }
+.p11 { grid-area: k; }
+
+[data-formation="1-2-6-2"] {
+  grid-template-areas:
+    ". . d g ."
+    ". b . . j"
+    "a . e h ."
+    ". c . . k"
+    ". . f i .";
+}
+
+[data-formation="1-3-4-3"] {
+  grid-template-areas:
+    ". b . . i"
+    ". . e g ."
+    "a c . . j"
+    ". . f h ."
+    ". d . . k";
+}
+
+[data-formation="1-5-2-3"] {
+  grid-template-areas:
+    ". b . . i"
+    ". c . . ."
+    "a d g h j"
+    ". e . . ."
+    ". f . . k";
+}
+
+[data-formation="1-3-2-5"] {
+  grid-template-areas:
+    ". b . . g"
+    ". . e . h"
+    "a c . . i"
+    ". . f . j"
+    ". d . . k";
+}
+
+[data-formation="1-5-1-4"] {
+  grid-template-areas:
+    ". . b . . h"
+    ". c . . . ."
+    "a d . g i j"
+    ". e . . . ."
+    ". . f . . k";
+}
+
+[data-formation="1-5-5-def"] {
+  grid-template-areas:
+    ". b . g"
+    ". c . h"
+    "a d . i"
+    ". e . j"
+    ". f . k";
+  grid-template-columns: repeat(7, 1fr);
+}
