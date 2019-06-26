@@ -30,6 +30,9 @@ class TeamPlayer extends HTMLElement {
         </div>
       </div>`;
   }
+
+  enableAvatar () { this.style.backgroundImage = `url(${this.avatar})`; }
+  disableAvatar () { this.style.backgroundImage = null; }
 }
 
 customElements.define('team-player', TeamPlayer);
