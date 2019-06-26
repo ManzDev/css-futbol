@@ -1,8 +1,10 @@
 import Teams from '/utils/Teams';
+import Commentator from '/utils/Commentator';
 
 // Fast deep clone (only primitive)
 const cloneDeep = object => JSON.parse(JSON.stringify(object));
 
+const commentator = new Commentator();
 const team = Teams.createTeam();
 
 const getEnergyColor = energy => {
@@ -29,10 +31,16 @@ class TeamPlayer extends HTMLElement {
           <div class="fill"></div>
         </div>
       </div>`;
+
+    this.addEventListener('click', this.playName);
   }
 
   enableAvatar () { this.style.backgroundImage = `url(${this.avatar})`; }
   disableAvatar () { this.style.backgroundImage = null; }
+
+  playName () {
+    commentator.speak(this.name);
+  }
 }
 
 customElements.define('team-player', TeamPlayer);
