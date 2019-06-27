@@ -22,7 +22,7 @@ class StadiumField extends HTMLElement {
       <players-zone class="playable"></players-zone>`;
 
     addEventListener('keydown', this.keyListener.bind(this));
-    addEventListener('wheel', this.onWheel.bind(this));
+    this.addEventListener('wheel', this.onWheel.bind(this));
   }
 
   keyListener () {
