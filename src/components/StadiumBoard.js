@@ -5,8 +5,8 @@ class StadiumBoard extends HTMLElement {
     this.localGoals = 0;
     this.visitorGoals = 0;
 
-    this.shadow = this.attachShadow({ mode: 'open' });
-    this.shadow.innerHTML = `
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
       <style>
         :host {
           position: absolute;
@@ -57,20 +57,23 @@ class StadiumBoard extends HTMLElement {
         <div class="visitor result screen">${this.visitorGoals}</div>
         <div class="lcd screen"></div>
       </div>`;
+
+    this.shadowRoot.querySelector('.local').addEventListener('click', this.incLocalGoals.bind(this));
+    this.shadowRoot.querySelector('.visitor').addEventListener('click', this.incVisitorGoals.bind(this));
   }
 
   setData (data) {
-    this.shadow.querySelector('.lcd').textContent = data.number + '. ' + data.name;
+    this.shadowRoot.querySelector('.lcd').textContent = data.number + '. ' + data.name;
   }
 
   incLocalGoals () {
     this.localGoals++;
-    this.shadow.querySelector('.local').textContent = this.localGoals;
+    this.shadowRoot.querySelector('.local').textContent = this.localGoals;
   }
 
   incVisitorGoals () {
     this.visitorGoals++;
-    this.shadow.querySelector('.visitor').textContent = this.localGoals;
+    this.shadowRoot.querySelector('.visitor').textContent = this.visitorGoals;
   }
 }
 

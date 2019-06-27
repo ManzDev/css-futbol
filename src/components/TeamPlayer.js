@@ -33,6 +33,8 @@ class TeamPlayer extends HTMLElement {
       </div>`;
 
     this.addEventListener('click', this.playName);
+    this.addEventListener('mouseenter', this.onMouseEnter);
+    this.addEventListener('mouseleave', this.disableAvatar);
   }
 
   enableAvatar () { this.style.backgroundImage = `url(${this.avatar})`; }
@@ -40,6 +42,12 @@ class TeamPlayer extends HTMLElement {
 
   playName () {
     commentator.speak(this.name);
+  }
+
+  onMouseEnter () {
+    this.enableAvatar();
+    const event = new CustomEvent('playerData', { detail: this.getData() });
+    dispatchEvent(event);
   }
 
   getData () {
