@@ -8,9 +8,11 @@ class PlayersZone extends HTMLElement {
     super();
 
     this.currentEquipation = 0;
-    this.currentFormation = 1;
+    this.currentFormation = 5;
 
-    this.classList.add('numbers', 'tenerife');
+    this.classList.add('numbers', TEAM_EQUIPATION[this.currentEquipation]);
+    this.dataset.formation = FORMATION_TYPES[this.currentFormation];
+
     this.innerHTML = `
         <team-player number="1" class="goalkeeper"></team-player>
         <team-player number="2"></team-player>

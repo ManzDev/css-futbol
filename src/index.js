@@ -1,9 +1,5 @@
-import '/utils/panelEvents.js';
-import '/utils/3dfield.js';
-import '/components/FieldArea.js';
-import '/components/StadiumBillboard.js';
 import '/components/StadiumBoard.js';
-import '/components/PlayersZone.js';
+import '/components/StadiumField.js';
 
 const board = document.querySelector('stadium-board');
 
