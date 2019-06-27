@@ -70,7 +70,7 @@ class StadiumBoard extends HTMLElement {
 
   incVisitorGoals () {
     this.visitorGoals++;
-    this.shadow.querySelector('.visitor').textContent = this.localGoals;
+    this.shadow.querySelector('.visitor').textContent = this.visitorGoals;
   }
 }
 
