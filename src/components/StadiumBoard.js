@@ -38,6 +38,7 @@ class StadiumBoard extends HTMLElement {
             font-size: 5rem;
             color: red;
             text-align: center;
+            user-select: none;
         }
 
         .lcd {
