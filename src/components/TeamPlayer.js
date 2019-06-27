@@ -41,6 +41,14 @@ class TeamPlayer extends HTMLElement {
   playName () {
     commentator.speak(this.name);
   }
+
+  getData () {
+    return {
+      avatar: this.avatar,
+      number: this.number,
+      name: this.name
+    };
+  }
 }
 
 customElements.define('team-player', TeamPlayer);
