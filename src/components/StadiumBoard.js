@@ -58,7 +58,9 @@ class StadiumBoard extends HTMLElement {
         <div class="visitor result screen">${this.visitorGoals}</div>
         <div class="lcd screen"></div>
       </div>`;
+  }
 
+  connectedCallback () {
     this.shadowRoot.querySelector('.local').addEventListener('click', this.incLocalGoals.bind(this));
     this.shadowRoot.querySelector('.visitor').addEventListener('click', this.incVisitorGoals.bind(this));
   }

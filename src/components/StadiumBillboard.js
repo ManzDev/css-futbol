@@ -45,7 +45,9 @@ class StadiumBillboard extends HTMLElement {
       </style>
       <div class="left panel"></div>
       <div class="right panel"></div>`;
+  }
 
+  connectedCallback () {
     this.enable();
   }
 

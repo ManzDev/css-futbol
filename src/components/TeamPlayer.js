@@ -31,7 +31,9 @@ class TeamPlayer extends HTMLElement {
           <div class="fill"></div>
         </div>
       </div>`;
+  }
 
+  connectedCallback () {
     this.addEventListener('click', this.playName);
     this.addEventListener('mouseenter', this.onMouseEnter);
     this.addEventListener('mouseleave', this.disableAvatar);

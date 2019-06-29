@@ -20,7 +20,9 @@ class StadiumField extends HTMLElement {
       <div class="middle zone"></div>
       <field-area class="right"></field-area>
       <players-zone class="playable"></players-zone>`;
+  }
 
+  connectedCallback () {
     addEventListener('keydown', this.keyListener.bind(this));
     this.addEventListener('wheel', this.onWheel.bind(this));
   }

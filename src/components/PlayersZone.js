@@ -25,7 +25,9 @@ class PlayersZone extends HTMLElement {
         <team-player number="9"></team-player>
         <team-player number="10"></team-player>
         <team-player number="11"></team-player>`;
+  }
 
+  connectedCallback () {
     addEventListener('keydown', this.keyListener.bind(this));
   }
 
